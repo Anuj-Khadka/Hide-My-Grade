@@ -1,3 +1,49 @@
+#nav-container{
+    width: 250px;
+    height: 100vh;
+    padding: 30px 15px;
+    flex: 0 0 auto;
+    background: #1f1f1f;
+    border-right:solid 1px #f9f9f94d;
+}
+
 #brand-name{
-    color: #56fa9a
+    color: #56fa9a;
+    background: rgb(173, 157, 57);
+}
+
+.nav-link-title{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center
+}
+
+.user-bar-container{
+    border-top: solid 1px #f9f9f94d;
+    margin-top: 25px;
+    padding-top: 15px;
+}
+
+.user-content{
+    display: flex;
+    align-items: center;
+
+}
+
+.user-profile-pic{
+    height: 35px;
+    width: 35px;
+    border-radius: 25px;
+    overflow: hidden;
+    margin-right: 12px;
+}
+
+#nav-user-profile{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.user-content .user-name{
+    font-size: 1.1rem
 }

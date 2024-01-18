@@ -1,0 +1,6 @@
+#mainboard-container {
+    flex: 1;
+    background: green;
+    height: 100%;
+    background-color: #161616;
+}
