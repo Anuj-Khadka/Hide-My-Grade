@@ -5,23 +5,98 @@
     flex: 0 0 auto;
     background: #1f1f1f;
     border-right:solid 1px #f9f9f94d;
+    position: relative;
+    transition: all 0.2s ease-in-out;
 }
 
-#brand-name{
-    color: #56fa9a;
-    background: rgb(173, 157, 57);
+.nav-hide{
+    /* left:-250px; */
+    transition: all 0.3s ease-in-out;
+    width: 0px !important;
+    padding:0 !important;
+    /* overflow: hidden; */
+    /* display: none; */
 }
+
+#brand-name {
+    opacity: 1;
+    color: #56fa9a;
+    margin-bottom: 25px;
+
+    transition: opacity 0.2s ease-in-out;
+}
+
+.nav-hide #brand-name {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    display: none;
+}
+
+.nav-menu{
+    opacity: 1
+}
+
+.nav-hide .nav-menu{
+    opacity:0;
+    transition: opacity 0.2s ease-in-out;
+    display: none;
+}
+
+/* .nav-hide .nav-wrapper{
+    z-index: 1111111111;
+} */
+
+/* menu bar  */
+
 
 .nav-link-title{
     display: flex;
     justify-content: flex-start;
-    align-items: center
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: light;
+    color: #f9f9f9;
+    transition: all 0.1s ease-in-out;
 }
+
+.nav-item{
+    padding: 7px 12px;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-item:hover{
+    background: #56fa9a;
+    font-weight: 500;
+}
+
+.nav-item:hover .nav-link-title{
+    color: #1f1f1f;
+}
+
+.active-link{
+    background: #56fa9a;
+    font-weight: 500;
+}
+.active-link > .nav-links > .nav-link-title{
+    color: #1f1f1f !important;
+}
+
+
+.nav-link-title .nav-link-icon{
+    margin-right: 8px;
+}
+
+
+
+/* user style  */
 
 .user-bar-container{
     border-top: solid 1px #f9f9f94d;
     margin-top: 25px;
-    padding-top: 15px;
+    padding-top: 25px;
 }
 
 .user-content{
@@ -46,4 +121,33 @@
 
 .user-content .user-name{
     font-size: 1.1rem
+}
+
+
+
+/* Nav Wrapper  */
+
+.nav-wrapper{
+    display: inline-flex;
+    overflow: hidden;
+    position: absolute;
+    top:30px;
+    right: -16px;
+    cursor: pointer;
+    z-index: 10000 ;
+}
+
+.wrap-icon-container{
+    padding: 8px;
+    background: #1f1f1f;
+    border: solid 1px #f9f9f94d;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-wrapper .wrapper-icon{
+    font-size: 1.1rem;
+    color:#f9f9f94d
 }

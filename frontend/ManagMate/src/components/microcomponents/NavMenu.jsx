@@ -1,15 +1,16 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { PiFolderBold, PiHouseBold } from "react-icons/pi";
 import { HiOutlineUserGroup } from "react-icons/hi2";
+
 import userProfile from '../../assets/imgs/user-profile.jpg'
 
 
 function NavMenu() {
     return (
-        <>
+        <div  className="nav-menu" >
             <NavList />
             <UserBar />
-        </>
+        </div>
     )
 }
 
@@ -17,10 +18,10 @@ const NavList = () => {
     return (
         <>
             <ul className="nav-list">
-                <li className="nav-item">
-                    <a href="#" className='nav-links'>
+                <li className="nav-item active-link">
+                    <a href="#" className='nav-links '>
                         <div className="nav-link-title">
-                            <PiHouseBold className="nav-link-icon" />
+                            <PiHouseBold className="nav-link-icon" size='20' />
                             <span>
                                 Home
                             </span>
@@ -30,9 +31,9 @@ const NavList = () => {
                 <li className="nav-item">
                     <a href="#" className='nav-links'>
                         <div className="nav-link-title">
-                            <PiFolderBold className="nav-link-icon" />
+                            <PiFolderBold className="nav-link-icon" size='20' />
                             <span>
-                                Home
+                                Projects
                             </span>
                         </div>
                     </a>
@@ -40,9 +41,9 @@ const NavList = () => {
                 <li className="nav-item">
                     <a href="#" className='nav-links'>
                         <div className="nav-link-title">
-                            <HiOutlineUserGroup className="nav-link-icon" />
+                            <HiOutlineUserGroup className="nav-link-icon" size='20'/>
                             <span>
-                                Home
+                                Teams
                             </span>
                         </div>
                     </a>
@@ -66,5 +67,6 @@ const UserBar = () => {
         </div>
     )
 }
+
 
 export default NavMenu

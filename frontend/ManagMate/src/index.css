@@ -1,8 +1,9 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   color-scheme: light dark;
-  color: #ffffff;
-  background-color: #242424;
+  color: #f8f8f8;
+  /* background-color: #242424; */
+  background-color: red;
 }
 
 
@@ -14,7 +15,7 @@
 
 a{
   text-decoration: none;
-  color: #ffffff;
+  color: #f8f8f8;
 }
 
 ul li{
