@@ -6,7 +6,7 @@ function AddProject() {
   return (
     <div className='add-project-btn'>
         <div className="add-project-icon">
-            <MdOutlineAdd />
+            <MdOutlineAdd size='17'/>
         </div>
         <div className="add-project-title mutes">
             Add Project

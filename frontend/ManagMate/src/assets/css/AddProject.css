@@ -2,12 +2,19 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    background: #f9f9f9;
-    padding: 15px 20px;
-    border-radius: 15px;
-    color: #242424;
+    background: #1f1f1f;
+    padding: 10px 12px;
+    border-radius: 25px;
+    color: #f9f9f9d5;
+    font-size: 0.9rem;
 }
 
 .add-project-icon{
-    margin-right: 10px;
+    margin-right: 7px;
+    background: #161616;
+    padding: 8px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
