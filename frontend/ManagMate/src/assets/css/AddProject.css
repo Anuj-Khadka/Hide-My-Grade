@@ -2,16 +2,18 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    background: #1f1f1f;
-    padding: 10px 12px;
+    background: #161616;
+    padding: 8px 15px;
     border-radius: 25px;
     color: #f9f9f9d5;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: solid 0.5px #f9f9f94d;
 }
 
 .add-project-icon{
     margin-right: 7px;
-    background: #161616;
+    background: #1f1f1f;
     padding: 8px;
     border-radius: 25px;
     display: flex;
