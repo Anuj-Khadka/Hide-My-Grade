@@ -1,17 +1,85 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Filter Courses</title>
+  <title>Hide My Courses</title>
 </head>
+<style>
+  /* Set a nice background and center everything */
+  body {
+    background: #f0f4f8;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 450px;
+    width: 350px;
+  }
+
+  .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 15px;
+  }
+
+  #extension-title {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 40px;
+  }
+
+  .container input {
+    width: 250px;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+
+  button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  #success-message {
+    color: green;
+    font-size: 1.2rem;
+    margin-top: 20px;
+  }
+  .message {
+    margin-top: 20px;
+  }
+  </style>
 <body>
-  <h1>Filter Courses</h1>
-  <!-- Input where user can type a tag name like 'p' or 'h1' -->
-  <input id="tagInput" placeholder="Enter tag (e.g., p, h1)" />
+  <div class="container">
 
-  <!-- Button to trigger tag search -->
-  <button id="findTags">Find Elements</button>
+    <h1 id="extension-title">Hide My Courses</h1>
+    <!-- Input where user can type a tag name like 'p' or 'h1' -->
+    <input id="currentClass" placeholder="25SP for Spring 25" />
+    
+    <!-- Button to trigger tag search -->
+    <button id="filterCoursesBtn">Filter Courses</button>
 
+    <div class="message">
+      <p id="success-message"></p>
+    </div>
+    
+  </div>
   <!-- Link to the popup JavaScript -->
-  <script src="popup.js"></script>
 </body>
+<script src="popup.js"></script>
 </html>

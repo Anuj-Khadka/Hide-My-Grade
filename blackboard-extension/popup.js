@@ -1,7 +1,8 @@
-// When the button is clicked
-document.getElementById("findTags").addEventListener("click", async () => {
+const filterCoursesFunc =  async () => {
   // Get the tag entered by the user
-  const tag = document.getElementById("tagInput").value;
+  const currentClassVal = document.getElementById("currentClass").value.toUpperCase();
+
+  
 
   // Get the currently active tab in the current Chrome window
   const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
@@ -9,19 +10,51 @@ document.getElementById("findTags").addEventListener("click", async () => {
   // Inject and execute a function into the active tab
   chrome.scripting.executeScript({
     target: { tabId: tab.id }, // Target the current tab
-    func: (tag) => {
+    func: (currentClassVal) => {
       // Select elements with the specified tag
-      const elements = document.querySelectorAll(tag);
+      const elements = document.querySelectorAll(`.course-number`);
 
-      // Log each element's content to the console
+      // Check if any elements were found
+      if (elements.length === 0) {
+        alert(`No ${currentClassVal} course found.`);
+        return;
+      }
+
       elements.forEach(el => {
-        console.log(`[${tag}]`, el.textContent);
+        const topDiv = el.closest('div[ng-repeat^="membership in baseGrades.getCoursesByTerm"]');
+        if (topDiv) {
+          topDiv.style.display = "";    // Show the parent div
+        }
       });
 
-      // Alert the number of elements found
-      alert(`Found ${elements.length} <${tag}> tags.`);
-      console.log(`Found ${elements.length} <${tag}> tags.`);
+      elements.forEach(el => {
+        if (!el.textContent.includes(currentClassVal)) {
+          // console.log(`Element found with: ${currentClassVal}`, el.textContent);
+          const topDiv = el.closest('div[ng-repeat^="membership in baseGrades.getCoursesByTerm"]');
+          if (topDiv) {
+            topDiv.style.display = "none";    // Hide the parent div
+          }
+        }
+        let successMessage = document.getElementById("success-message");
+        setTimeout(() => {
+          successMessage.style.display = "block";
+          successMessage.innerText = "✅ Filtered courses successfully!";
+        }, 5000);
+      });
+
     },
-    args: [tag] // Pass the tag input as an argument to the injected function
+    args: [currentClassVal] // Pass the tag input as an argument to the injected function
   });
+};
+
+
+// When the button is clicked
+document.getElementById("filterCoursesBtn").addEventListener("click", filterCoursesFunc);
+
+
+// When the user presses Enter in the input field
+document.getElementById("currentClass").addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    filterCoursesFunc();
+  }
 });
