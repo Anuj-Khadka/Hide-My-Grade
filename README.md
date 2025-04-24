@@ -1,5 +1,7 @@
 # Hide My Grade
-> This chrome extension helps you filter out only the current classes you are taking and view only those grade cards in Blackboard grade section.
+> This Chrome extension helps you filter out only the current classes you are taking and view only those grade cards in the Blackboard grade section.
 
 
 ## Features
+- Show only the current semester.
+- 
