@@ -3,5 +3,5 @@
 
 
 ## Features
-- Show only the current semester.
-- 
+- Show only the current semester grade.
+- Filter out between semesters.
